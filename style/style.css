@@ -10,19 +10,417 @@
 
 .molecule{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 12px;
+    height: 12px;
+
+    background: #c5270c;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #2c1dfb,
+        0 0 25px #2c1dfb,
+        0 0 50px #2c1dfb;
+
+    opacity: 0.8;
 }
 
-.molecule img{
+
+#periodic-table-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 100%);
+}
+
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+.periodic-bg-video {
+    position: absolute;
+
+    inset: 0;
+
     width: 100%;
     height: 100%;
-    object-fit: contain;
 
-    opacity: 0.5;
+    object-fit: cover;
 
-    user-select: none;
+    z-index: 0;
+    filter: blur(8px);
+
+    transform: scale(1.05);
 }
-#hello{
-    font-size: 3000%;
+
+
+/* =========================
+   DARK VIDEO OVERLAY
+========================= */
+
+.periodic-video-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    /* background:
+        linear-gradient(
+            rgba(5, 5, 5, 0.70),
+            rgba(5, 5, 5, 0.85)
+        ); */
+
+    z-index: 1;
+}
+
+
+/* =========================
+   PERIODIC TABLE
+========================= */
+
+#periodic-table {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+}
+#periodic-table {
+    width: 100%;
+}
+
+/* =========================
+   PERIODIC TABLE TITLE
+========================= */
+.periodic-title-box {
+
+    position: absolute;
+
+    left: 15%;
+    top: 5%;
+
+    z-index: 5;
+
+    width: 40%;
+
+    padding: 25px 30px;
+
+    /* Glass blur */
+    background: rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+
+        border: 1px solid #00eaff;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.15);
+}
+
+
+.periodic-title {
+
+    margin: 0;
+
+    font-size: 45px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+
+.periodic-description {
+
+    margin-top: 15px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: white;
+}
+/* =================================
+   LAPTOP / DESKTOP
+   ACTUAL PERIODIC TABLE STRUCTURE
+   ================================= */
+
+@media (min-width: 1116px) {
+
+    #periodic-table {
+
+        display: grid;
+
+        grid-template-columns: repeat(18, 1fr);
+
+        grid-template-rows: repeat(7, 100px);
+
+        gap: 6px;
+
+        max-width: 1400px;
+
+        margin: auto;
+
+    }
+
+
+    .element-wrapper {
+
+        grid-column: var(--column);
+        grid-row: var(--row);
+
+    }
+
+
+    .element {
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        border: 1px solid #e9fafc;
+
+        border-radius: 8px;
+
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        transition: 0.3s;
+
+        backdrop-filter: blur(10px);
+
+    }
+
+
+    .element:hover {
+
+        transform: translateY(-8px) scale(1.08);
+
+        background: #00eaff;
+
+        color: black;
+
+        box-shadow:
+            0 0 15px #00eaff,
+            0 0 30px #00eaff;
+
+    }
+
+}
+
+
+/* =================================
+   TABLET
+   ================================= */
+
+@media (min-width: 576px) and (max-width: 1115px) {
+
+    #periodic-table {
+
+        display: grid;
+
+        grid-template-columns: repeat(6, 1fr);
+
+        gap: 8px;
+
+    }
+
+
+    .element-wrapper {
+
+        width: 100%;
+
+    }
+
+
+    .element {
+
+        height: 100px;
+
+        background: rgba(255,255,255,0.08);
+
+        border: 1px solid #00eaff;
+
+        border-radius: 8px;
+
+        color: white;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+   ================================= */
+
+@media (max-width: 575px) {
+
+    #periodic-container {
+
+        padding: 30px 10px;
+
+    }
+
+
+    #periodic-table {
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 6px;
+
+    }
+
+
+    .element-wrapper {
+
+        width: 100%;
+
+    }
+
+
+    .element {
+
+        height: 85px;
+
+        background: rgba(255,255,255,0.08);
+
+        border: 1px solid #00eaff;
+
+        border-radius: 8px;
+
+        color: white;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =================================
+   ELEMENT TEXT
+   ================================= */
+
+.number {
+
+    font-size: 11px;
+
+}
+
+
+.symbol {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+}
+
+
+.name {
+
+    font-size: 10px;
+
+}
+
+
+@media (max-width: 575px) {
+
+    .symbol {
+
+        font-size: 20px;
+
+    }
+
+    .name {
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+.element-info{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.6);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:999999;
+
+}
+
+
+.info-card{
+
+    width:400px;
+
+    padding:30px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    color:white;
+
+    border:1px solid #00eaff;
+
+}
+
+
+#close-info{
+
+    float:right;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
 }
