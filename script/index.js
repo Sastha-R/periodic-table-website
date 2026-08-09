@@ -1,191 +1,83 @@
-document.querySelectorAll(".molecule").forEach((molecule) => {
+const particleData = {
 
-    let size = gsap.utils.random(5,1);
+    proton: {
 
-    gsap.set(molecule,{
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        width:size,
-        height:size
-    });
+        title: "Proton",
 
-    animateMolecule(molecule);
+        description:
+            "A proton is a positively charged particle found inside the nucleus.",
 
-});
+        extra:
+            "Charge: Positive (+)<br>Location: Nucleus"
 
+    },
 
-function animateMolecule(molecule){
+    neutron: {
 
-    gsap.to(molecule,{
-        x: Math.random()*window.innerWidth,
-        y: Math.random()*window.innerHeight,
-        duration: gsap.utils.random(8,15),
-        ease:"sine.inOut",
-        repeat:0,
-        onComplete:()=>animateMolecule(molecule)
-    });
+        title: "Neutron",
 
-}
-const table = document.getElementById("periodic-table");
+        description:
+            "A neutron is a particle with no electrical charge found inside the nucleus.",
 
+        extra:
+            "Charge: Neutral (0)<br>Location: Nucleus"
 
-async function loadElements() {
+    },
 
-    try {
+    electron: {
 
-        const response = await fetch(
-            "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json"
-        );
+        title: "Electron",
 
+        description:
+            "An electron is a negatively charged particle that moves around the nucleus.",
 
-        const data = await response.json();
+        extra:
+            "Charge: Negative (-)<br>Location: Electron Shell"
 
+    }
 
-        data.elements.forEach(element => {
+};
 
-            const wrapper = document.createElement("div");
 
+const particleButtons =
+    document.querySelectorAll(".particle-btn");
 
-            wrapper.className = "element-wrapper";
 
+particleButtons.forEach(button => {
 
-            /*
-            ===========================
-            LAPTOP / DESKTOP
-            ===========================
+    button.addEventListener("click", function () {
 
-            group  = column
-            period = row
-            */
+        particleButtons.forEach(btn => {
 
-            wrapper.style.setProperty(
-                "--column",
-                element.group
-            );
-
-
-            wrapper.style.setProperty(
-                "--row",
-                element.period
-            );
-
-
-            wrapper.innerHTML = `
-
-                <div class="element">
-
-                    <div class="number">
-                        ${element.number}
-                    </div>
-
-                    <div class="symbol">
-                        ${element.symbol}
-                    </div>
-
-                    <div class="name">
-                        ${element.name}
-                    </div>
-
-                </div>
-
-            `;
-
-
-            table.appendChild(wrapper);
-
-            
-           wrapper.addEventListener("click",()=>{
-
-
-    document.querySelector(".element-info")
-    .style.display="flex";
-
-
-    document.getElementById("info-symbol")
-    .innerHTML = element.symbol;
-
-
-    document.getElementById("info-name")
-    .innerHTML = element.name;
-
-
-    document.getElementById("info-details")
-    .innerHTML = `
-
-    Atomic Number :
-    ${element.number}
-
-    <br><br>
-
-    Atomic Mass :
-    ${element.atomic_mass}
-
-    <br><br>
-
-    Electron Configuration :
-    ${element.electron_configuration}
-
-    <br><br>
-
-    Phase :
-    ${element.phase}
-
-    <br><br>
-
-    Discovered By :
-    ${element.discovered_by ?? "Unknown"}
-
-    `;
-
-
-    document.getElementById("atom-model")
-    .src = element.bohr_model_3d;
-
-
-});
-
-            /*
-            ===========================
-            GSAP ANIMATION
-            ===========================
-            */
-
-            gsap.from(wrapper, {
-
-                opacity: 0,
-
-                scale: 0.5,
-
-                y: 30,
-
-                duration: 0.5,
-
-                delay: element.number * 0.01,
-
-                ease: "back.out(1.7)"
-
-            });
+            btn.classList.remove("active");
 
         });
 
 
-    } catch (error) {
-
-        console.error(
-            "Error fetching periodic table:",
-            error
-        );
-
-    }
-
-}
+        this.classList.add("active");
 
 
-loadElements();
-document.getElementById("close-info")
-.addEventListener("click",()=>{
+        const particle =
+            particleData[this.dataset.particle];
 
-    document.querySelector(".element-info")
-    .style.display="none";
+
+        document
+            .getElementById("particle-title")
+            .textContent =
+            particle.title;
+
+
+        document
+            .getElementById("particle-description")
+            .textContent =
+            particle.description;
+
+
+        document
+            .getElementById("particle-extra")
+            .innerHTML =
+            particle.extra;
+
+    });
 
 });
