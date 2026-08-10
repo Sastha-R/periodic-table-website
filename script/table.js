@@ -1,19 +1,12 @@
 document.querySelectorAll(".molecule").forEach((molecule) => {
-
-
     gsap.set(molecule,{
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-       
     });
-
     animateMolecule(molecule);
-
 });
 
-
 function animateMolecule(molecule){
-
     gsap.to(molecule,{
         x: Math.random()*window.innerWidth,
         y: Math.random()*window.innerHeight,
@@ -22,30 +15,20 @@ function animateMolecule(molecule){
         repeat:0,
         onComplete:()=>animateMolecule(molecule)
     });
-
 }
 const table = document.getElementById("periodic-table");
 
-
 async function loadElements() {
-
     try {
-
         const response = await fetch(
             // "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json"
             "https://cdn.jsdelivr.net/gh/Bowserinator/Periodic-Table-JSON@master/PeriodicTableJSON.json"
         );
-
-
         const data = await response.json();
-
-
         data.elements.forEach(element => {
-
     const wrapper = document.createElement("div");
-
     wrapper.className = "element-wrapper";
-
+    
     // Get category from API
     const category = element.category
         ?.toLowerCase()

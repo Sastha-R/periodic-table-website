@@ -122,11 +122,8 @@ gsap.from(".particle-info", {
     y: 50,
     opacity: 0,
     scale: 0.8,
-
     duration: 0.6,
-
     stagger: 0.2,
-
     ease: "back.out(1.7)"
 });
 gsap.fromTo(

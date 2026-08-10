@@ -4,11 +4,8 @@
 
 body {
     margin: 0;
-
      font-family: "Inter", sans-serif;
-
     background: #f4f9fc;
-
     color: #17212b;
 }
 
@@ -23,33 +20,24 @@ h3,
  */
 
 .navbar {
-
     background: rgba(255, 255, 255, 0.95);
-
     backdrop-filter: blur(15px);
-
     border-bottom: 1px solid #d9e5ec;
 }
 
 .navbar-brand {
-
     color: #087f8c !important;
-
     font-size: 25px;
-
     font-weight: bold;
 }
 
 .nav-link {
-
     color: #26343d !important;
-
     margin-left: 15px;
 }
 
 .nav-link:hover,
 .nav-link.active {
-
     color: #087f8c !important;
 }
 
@@ -59,307 +47,189 @@ h3,
  */
 
 .molecule-hero {
-
     min-height: 75vh;
-
     display: flex;
-
     align-items: center;
-
-    background:
-
-        radial-gradient(
-            circle at 75% 50%,
-            rgba(0, 174, 190, 0.15),
-            transparent 35%
-        ),
-
+    background:radial-gradient(circle at 75% 50%, rgba(0, 174, 190, 0.15),transparent 35%),
         linear-gradient(
             135deg,
             #f7fbfd,
             #e8f5f7
         );
-
     padding: 80px 8%;
-
     overflow: hidden;
 }
 
 .hero-content {
-
     max-width: 650px;
 }
 
 .hero-label {
-
     display: inline-block;
-
     margin-bottom: 20px;
-
     padding: 8px 18px;
-
     border-radius: 30px;
-
     background: #dff4f6;
-
     color: #087f8c;
-
     font-size: 13px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .hero-content h1 {
-
     font-size: 65px;
-
     font-weight: bold;
-
     line-height: 1.05;
-
     color: #17212b;
 }
 
 .hero-content h1 span {
-
     display: block;
-
     color: #087f8c;
 }
 
 .hero-content p {
-
     margin-top: 25px;
-
     max-width: 600px;
-
     font-size: 20px;
-
     color: #53636d;
-
     line-height: 1.7;
 }
-
 /* 
    SECTIONS
 */
 
 .section {
-
     padding: 90px 8%;
 }
 
 .section-title {
-
     text-align: center;
-
     font-size: 42px;
-
     margin-bottom: 15px;
-
     color: #17212b;
 }
 
 .section-description {
-
     text-align: center;
-
     color: #667780;
-
     max-width: 700px;
-
     margin: 0 auto 50px;
-
     line-height: 1.7;
 }
-
 
 /* 
    MOLECULE CARDS
 */
 
 .molecule-card {
-
     height: 100%;
-
     text-align: center;
-
     padding: 30px;
-
     background: white;
-
     border: 1px solid #d5e5e9;
-
     border-radius: 20px;
-
     transition: 0.3s;
-
-    box-shadow:
-        0 8px 25px rgba(30, 70, 80, 0.06);
+    box-shadow:0 8px 25px rgba(30, 70, 80, 0.06);
 }
 
 .molecule-card:hover {
-
     transform: translateY(-8px);
-
     border-color: #087f8c;
-
-    box-shadow:
-        0 15px 35px rgba(30, 70, 80, 0.12);
+    box-shadow:0 15px 35px rgba(30, 70, 80, 0.12);
 }
 
-
-
-
-
-
 .molecule {
-
     font-size: 45px;
-
     font-weight: bold;
-
     color: #087f8c;
-
     margin-bottom: 10px;
 }
 
 .molecule-card h4 {
-
     color: #17212b;
-
     margin-bottom: 10px;
 }
 
 .molecule-card p {
-
     color: #667780;
-
     margin: 0;
 }
-
 
 /* 
    NUMBERS
  */
 
 .numbers-section {
-
     background: #edf6f8;
 }
 
 .fact-card {
-
     text-align: center;
-
     padding: 35px;
-
     background: white;
-
     border-radius: 20px;
-
     border: 1px solid #d5e5e9;
-
-    box-shadow:
-        0 8px 25px rgba(30, 70, 80, 0.06);
+    box-shadow:0 8px 25px rgba(30, 70, 80, 0.06);
 }
 
 .fact-number {
-
     font-size: 60px;
-
     font-weight: bold;
-
     color: #087f8c;
-
     line-height: 1;
-    
     margin-bottom: 15px;
 }
 
 .fact-card h4 {
-
     color: #17212b;
-
     margin: 0;
 }
-
 
 /* 
    DID YOU KNOW
  */
 
 .fact-info {
-
     padding: 40px;
-
     background: white;
-
     border-radius: 25px;
-
     border: 1px solid #d5e5e9;
-
-    box-shadow:
-        0 10px 30px rgba(30, 70, 80, 0.08);
+    box-shadow:0 10px 30px rgba(30, 70, 80, 0.08);
 }
 
 .fact-info h3 {
-
     color: #087f8c;
-
     text-align: center;
-
     margin-bottom: 30px;
 }
 
 .fact-list {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
 }
 
 .fact-item {
-
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
     padding: 15px;
-
     background: #f4f9fc;
-
     border-radius: 12px;
-
     color: #53636d;
 }
 
 .fact-item span {
-
     min-width: 35px;
-
     height: 35px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 50%;
-
     background: #dff4f6;
-
     color: #087f8c;
-
     font-size: 12px;
-
     font-weight: bold;
 }
 
@@ -369,12 +239,8 @@ h3,
  */
 
 footer {
-
     padding: 40px;
-
     text-align: center;
-
     background: #e1edf0;
-
     color: #60727b;
 }

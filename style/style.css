@@ -25,7 +25,6 @@
 } */
  .molecule {
     position: absolute;
-
     width: 40px !important ;
     height: 40px !important ;
     background-image: url("../assets/img/Atom_loading_animation.svg");
@@ -33,12 +32,11 @@
     background-repeat: no-repeat;
     background-position: center;
     opacity: 1;
-       filter:
+    filter:
         brightness(2)
         drop-shadow(0 0 10px #03f5e8)
         drop-shadow(0 0 20px #03f5e8);
 }
-
 
 #periodic-table-section {
     position: relative;
@@ -47,17 +45,12 @@
     overflow: hidden;
     background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 100%);
 }
-
-
-
 /* 
    PERIODIC TABLE */
 
 #periodic-table {
     position: relative;
-
     z-index: 2;
-
     width: 100%;
 }
 #periodic-table {
@@ -68,51 +61,30 @@
    PERIODIC TABLE TITLE
  */
 .periodic-title-box {
-
     position: absolute;
-
     left: 15%;
     top: 5%;
-
     z-index: 5;
-
     width: 40%;
-
     padding: 25px 30px;
-
-    /* Glass blur */
     background: rgba(255, 255, 255, 0.25);
-
     backdrop-filter: blur(12px);
-
     border-radius: 20px;
-
-        border: 1px solid #00eaff;
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,0.15);
+    border: 1px solid #00eaff;
+    box-shadow:0 10px 40px rgba(0,0,0,0.15);
 }
 
-
 .periodic-title {
-
     margin: 0;
-
     font-size: 45px;
-
     font-weight: 700;
-
     color: white;
 }
 
-
 .periodic-description {
-
     margin-top: 15px;
-
     font-size: 18px;
     font-weight: 500;
-
     color: white;
 }
 /*
@@ -129,287 +101,167 @@
         margin: auto;
     }
 
-
     .element-wrapper {
-
         grid-column: var(--column);
         grid-row: var(--row);
 
     }
 
-
     .element {
-
         width: 100%;
         height: 100%;
-
         /* background: rgba(255, 255, 255, 0.08); */
         background-color: rgb(9, 133, 249);
         /* background: red ; */
-
         border: 1px solid #e9fafc;
-
         border-radius: 8px;
-
         color: white;
-
         display: flex;
         flex-direction: column;
-
         justify-content: center;
         align-items: center;
-
         text-align: center;
-
         transition: 0.3s;
-
         backdrop-filter: blur(10px);
-
     }
-
 
     .element:hover {
-
         transform: translateY(-8px) scale(1.08);
-
         background: #00eaff;
-
         color: black;
-
-        box-shadow:
-            0 0 15px #00eaff,
-            0 0 30px #00eaff;
-
+        box-shadow:0 0 15px #00eaff,0 0 30px #00eaff;
     }
-
 }
-
 
 /* 
    TABLET
    */
-
 @media (min-width: 576px) and (max-width: 1115px) {
         .periodic-title-box{
         display: none;
     }
 
     #periodic-table {
-
         display: grid;
-
         grid-template-columns: repeat(6, 1fr);
-
         gap: 8px;
-
     }
-
-
     .element-wrapper {
-
         width: 100%;
-
     }
-
-
     .element {
-
         height: 100px;
-
-
         border: 1px solid #f5f7f7;
-
-
-
         display: flex;
-
         flex-direction: column;
-
         justify-content: center;
-
         align-items: center;
-
         text-align: center;
-
     }
-
 }
-
-
 /* 
    MOBILE*/
-
 @media (max-width: 575px) {
         .periodic-title-box{
         display: none;
     }
 
     #periodic-container {
-
         padding: 30px 10px;
-
     }
-
 
     #periodic-table {
-
         display: grid;
-
         grid-template-columns: repeat(3, 1fr);
-
         gap: 6px;
-
     }
-
 
     .element-wrapper {
-
         width: 100%;
-
     }
-
 
     .element {
-
         height: 85px;
-
-
         border: 1px solid #f6fafa;
-
-
-
         display: flex;
-
         flex-direction: column;
-
         justify-content: center;
-
         align-items: center;
-
         text-align: center;
-
     }
-
 }
-
 
 /* 
    ELEMENT TEXT*/
 
 .number {
-
     font-size: 11px;
-
 }
-
 
 .symbol {
-
     font-size: 25px;
-
     font-weight: bold;
-
 }
-
 
 .name {
-
     font-size: 10px;
-
 }
 
-
 @media (max-width: 575px) {
-
     .symbol {
-
         font-size: 20px;
-
     }
 
     .name {
-
         font-size: 8px;
-
     }
-
 }
-
 
 .element-info{
-
     position:fixed;
-
     inset:0;
-
     background:rgba(0,0,0,.6);
-
     display:none;
-
     align-items:center;
-
     justify-content:center;
-
     z-index:999999;
-
 }
-
 
 .info-card{
-
     width:400px;
-
     padding:30px;
-
     background:
     rgba(255,255,255,.15);
-
     backdrop-filter:blur(20px);
-
     border-radius:20px;
-
     color:white;
-
     border:1px solid #00eaff;
-
 }
-
 
 #close-info{
-
     float:right;
-
     background:none;
-
     border:none;
-
     color:white;
-
     font-size:20px;
-
     cursor:pointer;
-
 }
-
 
 nav{
     background-color: rgb(169, 187, 250);
 }
 .nav-link:hover,
 .nav-link.active {
-
     color: #087f8c !important;
 }
+
 body{
     font-family: "Inter", sans-serif;
     background-color: rgb(70, 109, 252);
 }
 .navbar-brand {
-
     color: #087f8c !important;
-
     font-size: 25px;
-
     font-weight: bold;
 }
 
@@ -421,64 +273,50 @@ h3,
 }
 
 footer {
-
     padding: 40px;
-
     text-align: center;
-
     background: #e1edf0;
-
     color: #60727b;
 }   
 
 
-/* Alkali metals */
 .alkali-metal .element {
     background: #ff6b6b;
 }
 
-/* Alkaline earth metals */
 .alkaline-earth-metal .element {
     background: #ffa94d;
 }
 
-/* Transition metals */
 .transition-metal .element {
     background: #ffd43b;
     color: #111;
 }
 
-/* Post-transition metals */
 .post-transition-metal .element {
     background: #69db7c;
 }
 
-/* Metalloids */
 .metalloid .element {
     background: #38d9a9;
 }
 
-/* Reactive nonmetals */
 .reactive-nonmetal .element {
     background: #4df7e0;
 }
 
-/* Noble gases */
 .noble-gas .element {
     background: #9775fa;
 }
 
-/* Lanthanides */
 .lanthanide .element {
     background: #f783ac;
 }
 
-/* Actinides */
 .actinide .element {
     background: #e599f7;
 }
 
-/* Unknown */
 .unknown .element {
     background: #868e96;
 }

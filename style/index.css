@@ -9,8 +9,6 @@ body {
     color: #17212b;
 }
 
-
-
 h1,
 h2,
 h3,
@@ -19,7 +17,6 @@ h3,
 }
 /* 
    NAVBAR*/
-
 .navbar {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
@@ -49,22 +46,9 @@ h3,
 
 .hero {
     min-height: 90vh;
-
     display: flex;
     align-items: center;
-
-    background:
-        radial-gradient(
-            circle at 70% 50%,
-            rgba(0, 174, 190, 0.12),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #f7fbfd,
-            #e8f5f7
-        );
-
+    background: radial-gradient(circle at 70% 50%, rgba(0, 174, 190, 0.12), transparent 35%),linear-gradient(135deg, #f7fbfd, #e8f5f7);
     padding: 80px 8%;
 }
 
@@ -99,26 +83,18 @@ h3,
 
 .section-title {
     text-align: center;
-
     font-size: 42px;
-
     margin-bottom: 15px;
-
     color: #17212b;
 }
 
 .section-description {
     text-align: center;
-
     color: #667780;
-
     max-width: 700px;
-
     margin: 0 auto 50px;
-
     line-height: 1.7;
 }
-
 
 /* 
    PARTICLES
@@ -126,64 +102,43 @@ h3,
 
 .particle-buttons {
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
     flex-wrap: wrap;
-
     margin-bottom: 40px;
 }
 
 .particle-btn {
     padding: 12px 25px;
-
     border: 1px solid #087f8c;
-
     background: white;
-
     color: #087f8c;
-
     border-radius: 30px;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
 .particle-btn:hover,
 .particle-btn.active {
     background: #087f8c;
-
     color: white;
 }
 
 .particle-info {
     max-width: 700px;
-
     margin: auto;
-
     padding: 35px;
-
     background: white;
-
     border: 1px solid #d5e5e9;
-
     border-radius: 20px;
-
     text-align: center;
-
-    box-shadow:
-        0 8px 30px rgba(30, 70, 80, 0.08);
+    box-shadow: 0 8px 30px rgba(30, 70, 80, 0.08);
 }
 
 .particle-info h3 {
     color: #087f8c;
-
     margin-bottom: 20px;
 }
-
 
 #particle-title{
     font-weight: bold;
@@ -194,79 +149,49 @@ h3,
  */
 
 .family-card {
-
     position: relative;
-
     height: 300px;
-
     border-radius: 20px;
-
     overflow: hidden;
-
     border: 1px solid #d5e5e9;
-
     background-size: cover;
-
     background-position: center;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: end;
-
     transition: 0.4s;
 }
-
 
 /* 
    DARK OVERLAY
  */
 
 .family-card::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            transparent 20%,
-            rgba(0, 0, 0, 0.75)
-        );
+    background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.75));
 }
-
 
 /* 
    CONTENT
  */
 
 .family-content {
-
     position: relative;
-
     z-index: 2;
-
     padding: 25px;
-
     width: 100%;
 }
 
 .family-content h3 {
-
     color: #ffffff;
-
     font-size: 22px;
-
     margin-bottom: 8px;
 }
 
 .family-content p {
-
     color: #f2f7f8;
-
     margin: 0;
 }
 
@@ -276,40 +201,28 @@ h3,
 */
 
 .alkali-metals {
-
-    background-image:
-        url("../assets/img/image.png");
+    background-image:url("../assets/img/image.png");
 }
 
 .noble-gases {
-
-    background-image:
-        url("../assets/img/2.png");
+    background-image:url("../assets/img/2.png");
 }
 
 .halogens {
-
-    background-image:
-        url("../assets/img/3.png");
+    background-image: url("../assets/img/3.png");
 }
-
 
 /*
    HOVER
  */
 
 .family-card:hover {
-
     transform: translateY(-8px);
-
     border-color: #087f8c;
-
-    box-shadow:
-        0 10px 25px rgba(30, 80, 90, 0.15);
+    box-shadow:0 10px 25px rgba(30, 80, 90, 0.15);
 }
 
 .family-card:hover {
-
     background-size: 110%;
 }
 
@@ -319,87 +232,56 @@ h3,
  */
 
 .molecule-card {
-
     text-align: center;
-
     padding: 35px;
-
     background: white;
-
     border: 1px solid #d5e5e9;
-
     border-radius: 20px;
-
     transition: 0.3s;
-
-    box-shadow:
-        0 8px 25px rgba(30, 70, 80, 0.06);
+    box-shadow:0 8px 25px rgba(30, 70, 80, 0.06);
 }
 
 .molecule-card:hover {
-
     transform: translateY(-8px);
-
     border-color: #087f8c;
 }
 
 .molecule {
-
     font-size: 55px;
-
     font-weight: bold;
-
     color: #087f8c;
-
     margin-bottom: 15px;
 }
-
 
 /* 
    FACTS
  */
 
 .fact-number {
-
     font-size: 60px;
-
     font-weight: bold;
-
     color: #087f8c;
 }
 
 .fact-card {
-
     text-align: center;
-
     padding: 30px;
-
     background: white;
-
     border-radius: 20px;
-
     border: 1px solid #d5e5e9;
-
-    box-shadow:
-        0 8px 25px rgba(30, 70, 80, 0.06);
+    box-shadow: 0 8px 25px rgba(30, 70, 80, 0.06);
 }
-
 
 /* 
    FOOTER
  */
 
 footer {
-
     padding: 40px;
-
     text-align: center;
-
     background: #e6f0f3;
-
     color: #60727b;
 }
-
 
 /* 
    MOBILE
@@ -408,29 +290,23 @@ footer {
 @media (max-width: 768px) {
 
     .hero {
-
         padding: 70px 6%;
-
         text-align: center;
     }
 
     .hero h1 {
-
         font-size: 45px;
     }
 
     .hero p {
-
         font-size: 17px;
     }
 
     .section {
-
         padding: 70px 5%;
     }
 
     .section-title {
-
         font-size: 32px;
     }
 
