@@ -81,3 +81,70 @@ particleButtons.forEach(button => {
     });
 
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+gsap.from(".section-title", {
+    scrollTrigger: {
+        trigger: ".section-title",
+        start: "top 80%",
+        toggleActions: "play reverse play reverse"
+    },
+
+    y: 80,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+});
+
+gsap.from(".section-description", {
+    scrollTrigger: {
+        trigger: ".section-description",
+        start: "top 85%",
+        toggleActions: "play reverse play reverse"
+
+    },
+
+    y: 40,
+    opacity: 0,
+    duration: 0.8
+});
+
+
+gsap.from(".particle-info", {
+    scrollTrigger: {
+        trigger: ".particle-buttons",
+        start: "top 80%",
+        toggleActions: "play reverse play reverse"
+    },
+
+    y: 50,
+    opacity: 0,
+    scale: 0.8,
+
+    duration: 0.6,
+
+    stagger: 0.2,
+
+    ease: "back.out(1.7)"
+});
+gsap.fromTo(
+    ".family-content",
+    {
+        x: -200,
+        opacity: 0
+    },
+    {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+
+        scrollTrigger: {
+            trigger: ".family-content",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            markers: false
+        }
+    }
+);

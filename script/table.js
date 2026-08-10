@@ -1,12 +1,10 @@
 document.querySelectorAll(".molecule").forEach((molecule) => {
 
-    let size = gsap.utils.random(5,1);
 
     gsap.set(molecule,{
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        width:size,
-        height:size
+       
     });
 
     animateMolecule(molecule);
@@ -34,7 +32,8 @@ async function loadElements() {
     try {
 
         const response = await fetch(
-            "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json"
+            // "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json"
+            "https://cdn.jsdelivr.net/gh/Bowserinator/Periodic-Table-JSON@master/PeriodicTableJSON.json"
         );
 
 
@@ -43,130 +42,112 @@ async function loadElements() {
 
         data.elements.forEach(element => {
 
-            const wrapper = document.createElement("div");
+    const wrapper = document.createElement("div");
 
+    wrapper.className = "element-wrapper";
 
-            wrapper.className = "element-wrapper";
+    // Get category from API
+    const category = element.category
+        ?.toLowerCase()
+        .replace(/\s+/g, "-") || "unknown";
 
+    // Add category as CSS class
+    wrapper.classList.add(category);
 
-            /*
-            ===========================
-            LAPTOP / DESKTOP
-            ===========================
+    wrapper.style.setProperty(
+        "--column",
+        element.group
+    );
 
-            group  = column
-            period = row
-            */
+    wrapper.style.setProperty(
+        "--row",
+        element.period
+    );
 
-            wrapper.style.setProperty(
-                "--column",
-                element.group
-            );
+    wrapper.innerHTML = `
 
+        <div class="element">
 
-            wrapper.style.setProperty(
-                "--row",
-                element.period
-            );
+            <div class="number">
+                ${element.number}
+            </div>
 
+            <div class="symbol">
+                ${element.symbol}
+            </div>
 
-            wrapper.innerHTML = `
+            <div class="name">
+                ${element.name}
+            </div>
 
-                <div class="element">
-
-                    <div class="number">
-                        ${element.number}
-                    </div>
-
-                    <div class="symbol">
-                        ${element.symbol}
-                    </div>
-
-                    <div class="name">
-                        ${element.name}
-                    </div>
-
-                </div>
-
-            `;
-
-
-            table.appendChild(wrapper);
-
-            
-           wrapper.addEventListener("click",()=>{
-
-
-    document.querySelector(".element-info")
-    .style.display="flex";
-
-
-    document.getElementById("info-symbol")
-    .innerHTML = element.symbol;
-
-
-    document.getElementById("info-name")
-    .innerHTML = element.name;
-
-
-    document.getElementById("info-details")
-    .innerHTML = `
-
-    Atomic Number :
-    ${element.number}
-
-    <br><br>
-
-    Atomic Mass :
-    ${element.atomic_mass}
-
-    <br><br>
-
-    Electron Configuration :
-    ${element.electron_configuration}
-
-    <br><br>
-
-    Phase :
-    ${element.phase}
-
-    <br><br>
-
-    Discovered By :
-    ${element.discovered_by ?? "Unknown"}
+        </div>
 
     `;
 
+    table.appendChild(wrapper);
 
-    document.getElementById("atom-model")
-    .src = element.bohr_model_3d;
+    wrapper.addEventListener("click", () => {
 
+        document.querySelector(".element-info")
+            .style.display = "flex";
+
+        document.getElementById("info-symbol")
+            .innerHTML = element.symbol;
+
+        document.getElementById("info-name")
+            .innerHTML = element.name;
+
+        document.getElementById("info-details")
+            .innerHTML = `
+
+                Atomic Number :
+                ${element.number}
+
+                <br><br>
+
+                Atomic Mass :
+                ${element.atomic_mass}
+
+                <br><br>
+
+                Electron Configuration :
+                ${element.electron_configuration}
+
+                <br><br>
+
+                Phase :
+                ${element.phase}
+
+                <br><br>
+
+                Discovered By :
+                ${element.discovered_by ?? "Unknown"}
+
+            `;
+
+        document.getElementById("atom-model")
+            .src = element.bohr_model_3d;
+    });
+
+
+    // GSAP animation
+    gsap.from(wrapper, {
+
+        opacity: 0,
+
+        scale: 0.5,
+
+        y: 30,
+
+        duration: 0.5,
+
+        delay: element.number * 0.01,
+
+        ease: "back.out(1.7)"
+
+    });
 
 });
-
-            /*
-            ===========================
-            GSAP ANIMATION
-            ===========================
-            */
-
-            gsap.from(wrapper, {
-
-                opacity: 0,
-
-                scale: 0.5,
-
-                y: 30,
-
-                duration: 0.5,
-
-                delay: element.number * 0.01,
-
-                ease: "back.out(1.7)"
-
-            });
-
-        });
 
 
     } catch (error) {

@@ -4,15 +4,21 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     background: #f4f9fc;
     color: #17212b;
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: "Space Grotesk", sans-serif;
+}
+/* 
+   NAVBAR*/
 
 .navbar {
     background: rgba(255, 255, 255, 0.95);
@@ -37,9 +43,9 @@ body {
 }
 
 
-/* =========================
+/* 
    HERO
-========================= */
+*/
 
 .hero {
     min-height: 90vh;
@@ -83,9 +89,9 @@ body {
 }
 
 
-/* =========================
+/* 
    GENERAL SECTION
-========================= */
+ */
 
 .section {
     padding: 90px 8%;
@@ -114,9 +120,9 @@ body {
 }
 
 
-/* =========================
+/* 
    PARTICLES
-========================= */
+ */
 
 .particle-buttons {
     display: flex;
@@ -179,9 +185,13 @@ body {
 }
 
 
-/* =========================
+#particle-title{
+    font-weight: bold;
+}
+
+/* 
    ELEMENT FAMILIES
-========================= */
+ */
 
 .family-card {
 
@@ -209,9 +219,9 @@ body {
 }
 
 
-/* =========================
+/* 
    DARK OVERLAY
-========================= */
+ */
 
 .family-card::before {
 
@@ -229,9 +239,9 @@ body {
 }
 
 
-/* =========================
+/* 
    CONTENT
-========================= */
+ */
 
 .family-content {
 
@@ -261,9 +271,9 @@ body {
 }
 
 
-/* =========================
+/*
    BACKGROUND IMAGES
-========================= */
+*/
 
 .alkali-metals {
 
@@ -284,9 +294,9 @@ body {
 }
 
 
-/* =========================
+/*
    HOVER
-========================= */
+ */
 
 .family-card:hover {
 
@@ -304,9 +314,9 @@ body {
 }
 
 
-/* =========================
+/* 
    MOLECULES
-========================= */
+ */
 
 .molecule-card {
 
@@ -345,9 +355,9 @@ body {
 }
 
 
-/* =========================
+/* 
    FACTS
-========================= */
+ */
 
 .fact-number {
 
@@ -375,9 +385,9 @@ body {
 }
 
 
-/* =========================
+/* 
    FOOTER
-========================= */
+ */
 
 footer {
 
@@ -391,9 +401,9 @@ footer {
 }
 
 
-/* =========================
+/* 
    MOBILE
-========================= */
+ */
 
 @media (max-width: 768px) {
 

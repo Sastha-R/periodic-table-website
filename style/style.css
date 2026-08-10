@@ -8,12 +8,12 @@
     overflow: hidden;
 }
 
-.molecule{
+/* .molecule{
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 4px;
+    height: 4px;
 
-    background: #c5270c;
+    background: #00eaff;
     border-radius: 50%;
 
     box-shadow:
@@ -21,7 +21,22 @@
         0 0 25px #2c1dfb,
         0 0 50px #2c1dfb;
 
-    opacity: 0.8;
+    opacity: 1;
+} */
+ .molecule {
+    position: absolute;
+
+    width: 40px !important ;
+    height: 40px !important ;
+    background-image: url("../assets/img/Atom_loading_animation.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+       filter:
+        brightness(2)
+        drop-shadow(0 0 10px #03f5e8)
+        drop-shadow(0 0 20px #03f5e8);
 }
 
 
@@ -30,53 +45,13 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 100%);
+    background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 100%);
 }
 
 
-/* =========================
-   BACKGROUND VIDEO
-========================= */
 
-.periodic-bg-video {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: 0;
-    filter: blur(8px);
-
-    transform: scale(1.05);
-}
-
-
-/* =========================
-   DARK VIDEO OVERLAY
-========================= */
-
-.periodic-video-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    /* background:
-        linear-gradient(
-            rgba(5, 5, 5, 0.70),
-            rgba(5, 5, 5, 0.85)
-        ); */
-
-    z-index: 1;
-}
-
-
-/* =========================
-   PERIODIC TABLE
-========================= */
+/* 
+   PERIODIC TABLE */
 
 #periodic-table {
     position: relative;
@@ -89,9 +64,9 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
     width: 100%;
 }
 
-/* =========================
+/* 
    PERIODIC TABLE TITLE
-========================= */
+ */
 .periodic-title-box {
 
     position: absolute;
@@ -140,27 +115,18 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 
     color: white;
 }
-/* =================================
-   LAPTOP / DESKTOP
+/*
    ACTUAL PERIODIC TABLE STRUCTURE
-   ================================= */
+ */
 
 @media (min-width: 1116px) {
-
     #periodic-table {
-
         display: grid;
-
         grid-template-columns: repeat(18, 1fr);
-
         grid-template-rows: repeat(7, 100px);
-
         gap: 6px;
-
         max-width: 1400px;
-
         margin: auto;
-
     }
 
 
@@ -177,7 +143,9 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
         width: 100%;
         height: 100%;
 
-        background: rgba(255, 255, 255, 0.08);
+        /* background: rgba(255, 255, 255, 0.08); */
+        background-color: rgb(9, 133, 249);
+        /* background: red ; */
 
         border: 1px solid #e9fafc;
 
@@ -217,11 +185,14 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 }
 
 
-/* =================================
+/* 
    TABLET
-   ================================= */
+   */
 
 @media (min-width: 576px) and (max-width: 1115px) {
+        .periodic-title-box{
+        display: none;
+    }
 
     #periodic-table {
 
@@ -245,13 +216,10 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 
         height: 100px;
 
-        background: rgba(255,255,255,0.08);
 
-        border: 1px solid #00eaff;
+        border: 1px solid #f5f7f7;
 
-        border-radius: 8px;
 
-        color: white;
 
         display: flex;
 
@@ -268,11 +236,13 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 }
 
 
-/* =================================
-   MOBILE
-   ================================= */
+/* 
+   MOBILE*/
 
 @media (max-width: 575px) {
+        .periodic-title-box{
+        display: none;
+    }
 
     #periodic-container {
 
@@ -303,13 +273,10 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 
         height: 85px;
 
-        background: rgba(255,255,255,0.08);
 
-        border: 1px solid #00eaff;
+        border: 1px solid #f6fafa;
 
-        border-radius: 8px;
 
-        color: white;
 
         display: flex;
 
@@ -326,9 +293,8 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 }
 
 
-/* =================================
-   ELEMENT TEXT
-   ================================= */
+/* 
+   ELEMENT TEXT*/
 
 .number {
 
@@ -423,4 +389,96 @@ background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgb(70, 109, 252) 10
 
     cursor:pointer;
 
+}
+
+
+nav{
+    background-color: rgb(169, 187, 250);
+}
+.nav-link:hover,
+.nav-link.active {
+
+    color: #087f8c !important;
+}
+body{
+    font-family: "Inter", sans-serif;
+    background-color: rgb(70, 109, 252);
+}
+.navbar-brand {
+
+    color: #087f8c !important;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+footer {
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: #e1edf0;
+
+    color: #60727b;
+}   
+
+
+/* Alkali metals */
+.alkali-metal .element {
+    background: #ff6b6b;
+}
+
+/* Alkaline earth metals */
+.alkaline-earth-metal .element {
+    background: #ffa94d;
+}
+
+/* Transition metals */
+.transition-metal .element {
+    background: #ffd43b;
+    color: #111;
+}
+
+/* Post-transition metals */
+.post-transition-metal .element {
+    background: #69db7c;
+}
+
+/* Metalloids */
+.metalloid .element {
+    background: #38d9a9;
+}
+
+/* Reactive nonmetals */
+.reactive-nonmetal .element {
+    background: #4df7e0;
+}
+
+/* Noble gases */
+.noble-gas .element {
+    background: #9775fa;
+}
+
+/* Lanthanides */
+.lanthanide .element {
+    background: #f783ac;
+}
+
+/* Actinides */
+.actinide .element {
+    background: #e599f7;
+}
+
+/* Unknown */
+.unknown .element {
+    background: #868e96;
 }
